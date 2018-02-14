@@ -1,0 +1,645 @@
+{
+	"info": {
+		"name": "Library",
+		"_postman_id": "72c789e8-52a6-d544-ff48-00dba3e0c748",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "newBook",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \n\t\"title\": \"Test Title 1\",\n    \"author\": \"Test Author 1\",\n    \"publicationYear\" : 2018\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/book/createBook",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"book",
+						"createBook"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getBook",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \n\t\"title\": \"Book 3\",\n    \"author\": \"Author\",\n    \"publicationYear\" : 2999\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/book/getBookById?bookId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"book",
+						"getBookById"
+					],
+					"query": [
+						{
+							"key": "bookId",
+							"value": "1",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getBooksByAuthor",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \n\t\"title\": \"Book 3\",\n    \"author\": \"Author\",\n    \"publicationYear\" : 2999\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/book/getByAuthor?author=author",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"book",
+						"getByAuthor"
+					],
+					"query": [
+						{
+							"key": "author",
+							"value": "author",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getBooksByTitle",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \n\t\"title\": \"Book 3\",\n    \"author\": \"Author\",\n    \"publicationYear\" : 2999\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/book/getByTitle?title=A book",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"book",
+						"getByTitle"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "A book",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "updateBook",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \n\t\"id\" : 3,\n\t\"title\": \"Test Title 3\",\n    \"author\": \"Test Author 3\",\n    \"publicationYear\" : 29991\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/book/updateBook",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"book",
+						"updateBook"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getCopyById",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \n\t\"id\" : 3,\n\t\"title\": \"Test Title 3\",\n    \"author\": \"Test Author 3\",\n    \"publicationYear\" : 29991\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/book/getCopyById?copyId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"book",
+						"getCopyById"
+					],
+					"query": [
+						{
+							"key": "copyId",
+							"value": "1",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "createCopy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \n\t\"bookId\" : 3,\n\t\"status\": \"New\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/book/createCopy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"book",
+						"createCopy"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getAvailableCopies",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \n\t\"id\" : 3,\n\t\"title\": \"Test Title 3\",\n    \"author\": \"Test Author 3\",\n    \"publicationYear\" : 29991\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/book/getAvailableCopies?bookId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"book",
+						"getAvailableCopies"
+					],
+					"query": [
+						{
+							"key": "bookId",
+							"value": "1",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getAvailableQuantity",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \n\t\"id\" : 3,\n\t\"title\": \"Test Title 3\",\n    \"author\": \"Test Author 3\",\n    \"publicationYear\" : 29991\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/book/getAvailableQuantity?bookId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"book",
+						"getAvailableQuantity"
+					],
+					"query": [
+						{
+							"key": "bookId",
+							"value": "1",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "updateCopy",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \n\t\"id\" : 1,\n\t\"bookId\" : 3,\n\t\"status\": \"Old\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/book/updateCopy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"book",
+						"updateCopy"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "createMember",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \n\t\"firstName\" : \"Michael\",\n\t\"lastName\" : \"Biker\"\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/member/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"member",
+						"create"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "updateMember",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \n\t\"id\" : 3,\n\t\"firstName\" : \"Michael\",\n\t\"lastName\" : \"Biker\",\n\t\"memberSince\": \"2018-02-13\"\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/member/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"member",
+						"update"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "deleteMember",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/member/delete?memberId=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"member",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "memberId",
+							"value": "4",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getMembersByLastName",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \n\t\"id\" : 3,\n\t\"firstName\" : \"Michael\",\n\t\"lastName\" : \"Biker\",\n\t\"memberSince\": \"2018-02-13\"\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/member/getByLastName?lastName=Biker",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"member",
+						"getByLastName"
+					],
+					"query": [
+						{
+							"key": "lastName",
+							"value": "Biker",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getMembersById",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \n\t\"id\" : 3,\n\t\"firstName\" : \"Michael\",\n\t\"lastName\" : \"Biker\",\n\t\"memberSince\": \"2018-02-13\"\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/member/getById?memberId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"member",
+						"getById"
+					],
+					"query": [
+						{
+							"key": "memberId",
+							"value": "1",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "lendCopy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \n\t\"copyId\" : 1,\n\t\"memberId\" : 1\n\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/lending/lend",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"lending",
+						"lend"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "actualyLentByMember",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \n\t\"copyId\" : 10,\n\t\"memberId\" : 1\n\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/lending/getLentByMember?memberId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"lending",
+						"getLentByMember"
+					],
+					"query": [
+						{
+							"key": "memberId",
+							"value": "1",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "returnBook",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \n\t\"copyId\" : 10,\n\t\"memberId\" : 1\n\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/lending/return?copyId=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"lending",
+						"return"
+					],
+					"query": [
+						{
+							"key": "copyId",
+							"value": "10",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
