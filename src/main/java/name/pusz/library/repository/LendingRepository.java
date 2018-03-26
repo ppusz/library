@@ -13,8 +13,6 @@ public interface LendingRepository extends CrudRepository<Lending, Long> {
     @Override
     Lending save(Lending lending);
 
-    //List<Lending> findByLibraryMemberId(Long memberId);
-
     @Query
     List<Lending> lentByMemberNotReturned(@Param("MEMBER_ID") Long memberId);
 

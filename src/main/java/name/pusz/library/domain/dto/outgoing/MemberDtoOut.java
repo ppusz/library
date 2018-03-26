@@ -3,7 +3,7 @@ package name.pusz.library.domain.dto.outgoing;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-import java.sql.Date;
+import java.util.Date;
 
 
 @Getter

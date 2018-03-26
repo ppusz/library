@@ -3,6 +3,8 @@ package name.pusz.library.mapper;
 import name.pusz.library.domain.LibraryMember;
 import name.pusz.library.domain.dto.incoming.MemberDtoIn;
 import name.pusz.library.domain.dto.outgoing.MemberDtoOut;
+import name.pusz.library.utils.LocalDateConverter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.sql.Date;
@@ -11,6 +13,9 @@ import java.util.stream.Collectors;
 
 @Component
 public class MemberMapper {
+
+    @Autowired
+    private LocalDateConverter dateConverter;
 
     public MemberDtoOut mapToMemberDtoOut(LibraryMember libraryMember) {
         return new MemberDtoOut(
@@ -32,7 +37,7 @@ public class MemberMapper {
                 memberDtoIn.getId(),
                 memberDtoIn.getFirstName(),
                 memberDtoIn.getLastName(),
-                memberDtoIn.getMemberSince().toLocalDate(),
+                dateConverter.convertToEntityAttribute(memberDtoIn.getMemberSince()),
                 null);
     }
 }
